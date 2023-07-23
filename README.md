@@ -1,7 +1,7 @@
 # 소개(introduction)
 RCVolus의 lol-pick-ban-ui 기반 밴픽 UI 입니다.
 'lol-pick-ban-ui' 설치 후, layouts폴더에 본 폴더를 넣고 사용하세요!
-After installing 'lol-pick-ban-ui', put this folder in the layouts folder and use it!
+- After installing 'lol-pick-ban-ui', put this folder in the layouts folder and use it!
 
 # 실행 방법(How to use)
 1. 'node.js 16.7.0' 설치
