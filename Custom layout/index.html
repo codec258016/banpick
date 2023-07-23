@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+
+    <body>
+        <div class="full">
+            <div class="container">
+                <div class="picksui">
+                    <div class="blue picks" id="picks_blue"></div>
+                    <div class="ifs">
+                        <div class="scorse">
+                            <span class="score" id="blue_score">0</span>
+                            <div class="gameinfos">
+                                <p id="round">FINALS</p>
+                                <p id="game">GAME 1</p>
+                            </div>
+                            <span class="score" id="red_score">0</span>
+                        </div>
+                    </div>
+                    <div class="red picks" id="picks_red"></div>
+                </div>
+                <div class="bansui">
+                    <div class="teamb"><p class="team-initials" id="blue_initials">백엔드 연결 확인</p></div>
+                    <div class="blue bans" id="bans_blue"></div>
+                    <div class="timebar">
+                        <div class="timerContainer"><p id="timer">게임 연결 확인</p></div>
+                    </div>
+                    <div class="red bans" id="bans_red"></div>
+                    <div class="teamr"><p class="team-initials" id="red_initials">백엔드 연결 확인</p></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./frontend-lib.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>

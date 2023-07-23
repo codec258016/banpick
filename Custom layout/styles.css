@@ -1,0 +1,491 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: AkiraExpanded;
+    src: url(Akira-Expanded-Demo.otf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: VeganAbattoir;
+    src: url(Vegan-Abattoir.otf);
+}
+
+.full{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.container {
+    width: 100%;
+    display: block;
+    margin: auto auto 0px auto;
+}
+
+/* ---------------------- UTILITIES ---------------------- */
+
+.hidden {
+    position: absolute;
+    visibility: hidden;
+}
+
+/* ---------------------- BAR ---------------------- */
+.bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 150px;
+}
+
+.bar > .blue, .bar > .red {
+    width: 45%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bar .blue {
+    background: rgb(9,12,13);
+    background: linear-gradient(90deg, rgba(9,12,13,1) 0%, rgba(18,23,26,1) 100%);
+}
+
+.bar .red {
+    direction: rtl;
+    background: rgb(9,12,13);
+    background: linear-gradient(-90deg, rgba(9,12,13,1) 0%, rgba(18,23,26,1) 100%);
+}
+
+.bar .team-info {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    color: #D4AF37;
+}
+
+.bar .blue .team-info {
+    margin-left: 40px;
+}
+
+.bar .red .team-info {
+    margin-right: 40px;
+}
+
+.team-name, #timer, #game, #round, .score {
+    font-family: Montserrat;
+    margin: 0;
+}
+
+.team-initials {
+    margin: 0;
+    font-family: 'ONE-Mobile-Title';
+    font-size: 65px;
+    line-height: 65px;
+    text-transform: uppercase;
+}
+
+
+.bar > .info {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #BBA151;
+}
+
+#red_name {
+    margin-right: -14px;
+}
+
+.team-name {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 14px;
+}
+
+.timerContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#timer {
+    font-size: 60px;
+}
+
+#round {
+    font-size: 20px;
+}
+
+#game {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.score {
+    font-size: 100px;
+    font-weight: 500;
+    align-self: center;
+}
+
+#blue_score {
+    margin-right: 50px;
+}
+
+#red_score {
+    margin-left: 50px;
+}
+
+.picks .pick .pick-glow {
+    animation: pick-shadow 3s infinite;
+}
+
+@keyframes pick-shadow {
+    50% {box-shadow: inset 0 -150px 100px -100px #ec2690d2;}
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 8px;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    background-color: #ec268f;
+    transition: width 1s linear;
+    transform-origin: left center;
+    transform: scaleX(1);
+    }
+
+/* ---------------------- PICKS ---------------------- */
+.picksui{
+    width: 100%;
+    display: flex;
+}
+.pickarea{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.line1-1{
+    width: 1px;
+    height: 220px;
+    background-color: #fff;
+    margin: auto;
+}
+.line1-2{
+    width: 1px;
+    height: 220px;
+    background-color: #fff;
+    margin: auto;
+}
+.picks.blue .pickarea .line1-1{
+    display: none;
+}
+.picks.red .pickarea .line1-2{
+    display: none;
+}
+.blanksp{
+    width: 15%;
+}
+
+.ifs{
+    width: 15%;
+    height: 250px;
+    background-color: #171627;
+    display: block;
+}
+.gameinfos{
+    text-align: center;
+    color: #fff;
+    margin: auto;
+}
+#timer{
+    font-size: 40px;
+}
+.scorse{
+    height: 100%;
+    display: flex;
+}
+.score{
+    font-family: 'ONE-Mobile-Title';
+    color: #fff;
+    width: 20%;
+    font-size: 70px;
+    text-align: center;
+}
+#blue_score{
+    margin: auto auto auto 20px;
+    text-align: center;
+}
+#red_score{
+    margin: auto 20px auto auto;
+    text-align: center;
+}
+.teaminfos{
+    display: flex;
+    height: 30%;
+    margin-top: -30px;
+}
+
+.picks {
+    top: 150px;
+    width: 40%;
+    height: 250px;
+    display: flex;
+    background-color: #171627;
+}
+
+.picks.blue {
+    margin: auto 0px auto auto;
+}
+.picks.red {
+    margin: auto auto auto 0px;
+}
+
+.picks .pick {
+    width: 100%;
+    flex-grow: 2;
+    display: flex;
+    z-index: 1;
+    
+}
+
+.picks .pick .splash {
+    height: 100%;
+    width: 100%;
+    
+    transition: 
+      background-color 0.5s ease,
+      opacity 0.75s;
+      
+    border-width: 0px;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.picks.red .pick .splash {
+    justify-content: flex-end !important;
+}
+
+.picks .pick .blank {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: 9;
+    
+    transition: 
+      background-color 0.5s ease,
+      opacity 0.75s;
+      
+    border-width: 0px;
+    background-size: 30%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.picks .pick .text-champ {
+    color: white;
+    font-family: 'ONE-Mobile-Title';
+    width: 10px;
+    writing-mode: vertical-rl;
+    font-size: 10px;
+    margin: 0px 5px auto 5px;
+    padding: 10px;
+}
+
+.picks .pick .text-champ {
+    right: 10px;
+    width: 10px;
+    font-size: 13px;
+    writing-mode: vertical-rl;
+}
+
+.picks .pick .text-ign {
+    color: white;
+    font-family: 'ONE-Mobile-Title';
+    font-weight: 700;
+    letter-spacing: 5px;
+    left: 10px;
+    bottom: 0;
+    text-transform: uppercase;
+    text-align: end;
+    margin: 0px 0px auto 5px;
+    padding: 5px;
+    writing-mode: vertical-rl;
+    font-size: 12px;
+}
+.picks .pick .text-ign {
+    right: 10px;
+}
+
+.picks .pick .spells-container {
+    display: flex;
+    flex-direction: column;
+    width: 35px;
+    height: 70px;
+    margin: 10px;
+    margin-right: 5px;
+    transition: 2s;
+    background-color: #ec268f;
+}
+.picks .pick .spells-container {
+    margin: auto 10px 15px auto;
+}
+
+.picks .pick .spells-container .spell {
+    background-size: cover;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    flex-wrap: wrap;
+}
+
+/* ---------------------- BANS ---------------------- */
+.bansui{
+    display: flex;
+    margin: 10px auto;
+    display: flex;
+}
+.timebar{
+    width: 15%;
+    display: flex;
+    color: #ec268f;
+    margin: auto 0px auto 0px;
+}
+#timer{
+    text-align: center;
+    font-family: 'ONE-Mobile-Title';
+}
+.banbox{
+    width: 20%;
+    height: 100%;
+    display: flex;
+}
+.line2{
+    width: 1px;
+    height: 50px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.teamb{
+    width: 23.9%;
+    height: 62px;
+    /*background-color:#171627;*/
+    display: flex;
+    margin: auto 0px auto auto;
+}
+.teamr{
+    width: 23.9%;
+    height: 62px;
+    /*background-color:#171627;*/
+    display: flex;
+    margin: auto auto auto 0px;
+}
+#blue_initials{
+    font-size: 40px;
+    color: #fff;
+    margin: auto 0px;
+}
+#red_initials{
+    font-size: 40px;
+    color: #fff;
+    margin: auto 0px auto auto;
+}
+
+.bans {
+    overflow: hidden;
+    top: 950px;
+    width: 16.1%;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#171627;
+}
+
+.bans.red {
+    right: 0;
+    flex-direction: row-reverse;
+}
+
+.bans .ban {
+    max-height: 99%;
+    width: 99%;
+    transition: 2s;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: inherit;
+}
+
+.bans .ban .splash {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 55% 25%;
+    height: 100%;
+    width: 125%;
+    margin: auto;
+    background-image: url(/imgs/ban-placeholder.png);
+
+    transition: filter 0.5s ease-in-out;
+}
+
+.bans .ban .blank {
+    /*background-color: #141414;*/
+    height: 99% !important;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*.bans .ban .blank::after {
+    content:"";
+    border-top:1px solid #fff;
+    width: 100px;
+    transform: rotate(45deg);
+    transform-origin: 50% 0%;
+}*/
+
+.bans .ban .ban-glow {
+    animation: ban-shadow 3s infinite;
+}
+
+.grayscale {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes ban-shadow {
+    50% {box-shadow: inset 0px 0px 30px 0px #ec2690d2;}
+}
