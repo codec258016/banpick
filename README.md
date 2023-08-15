@@ -23,7 +23,3 @@ RCVolus의 lol-pick-ban-ui 기반 밴픽 UI 입니다.
 # 폰트 저작권(Fonts License)
 본 폴더에 포함된 폰트들은 저작권을 가지고 있음으로, 사용 전 확인 바랍니다.
 - Fonts included in this folder are copyrighted, so please check before use.
-
-# 코맨트(Comment)
-아직 코드 정리가 안 되어 있습니다.
-- The code hasn't been cleaned up yet.
